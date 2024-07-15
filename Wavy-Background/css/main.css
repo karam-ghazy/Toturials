@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.page {
+  height: 1vh;
+}
+.page::before {
+  content: "";
+  position: fixed;
+  width: 250%;
+  height: 100%;
+  background-color: #0075ff;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  animation: waving 5s ease-in-out infinite alternate;
+  -webkit-animation: waving 5s ease-in-out infinite alternate;
+  transform: translateX(-50%) skew(0, -10deg);
+  -webkit-transform: translateX(-50%) skew(0, -10deg);
+  -moz-transform: translateX(-50%) skew(0, -10deg);
+  -ms-transform: translateX(-50%) skew(0, -10deg);
+  -o-transform: translateX(-50%) skew(0, -10deg);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.page .card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 520px;
+  background-color: white;
+  box-shadow: 0 0 10px #ddd inset;
+  border-radius: 6px;
+  text-align: center;
+  padding: 15px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.page .card .name {
+  color: white;
+  background-color: #0075ff;
+  height: calc(100% - 120px);
+  border-radius: 10px;
+  position: relative;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.page .card .name p {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+@keyframes waving {
+  from {
+    transform: translateX(-50%) skew(0, -10deg);
+    -webkit-transform: translateX(-50%) skew(0, -10deg);
+    -moz-transform: translateX(-50%) skew(0, -10deg);
+    -ms-transform: translateX(-50%) skew(0, -10deg);
+    -o-transform: translateX(-50%) skew(0, -10deg);
+  }
+  to {
+    transform: translateX(-30%) skew(10deg, 0);
+    -webkit-transform: translateX(-30%) skew(10deg, 0);
+    -moz-transform: translateX(-30%) skew(10deg, 0);
+    -ms-transform: translateX(-30%) skew(10deg, 0);
+    -o-transform: translateX(-30%) skew(10deg, 0);
+  }
+}

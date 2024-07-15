@@ -38,7 +38,7 @@ body {
 }
 .menu:hover span:first-child,
 .menu:hover span:last-child {
-  top: 6px;
+  top: 12px;
   background-color: red;
 }
 .menu:hover span:first-child {
