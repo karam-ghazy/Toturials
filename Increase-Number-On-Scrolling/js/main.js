@@ -38,3 +38,36 @@ window.onscroll = function () {
   }
   //end increase
 };
+
+//get time end
+let countDownDate = new Date("Oct 10, 2024 23:59:59").getTime();
+// console.log(countDownDate);
+
+//start counter
+let counter = setInterval(() => {
+  //get date now
+  let dateNow = new Date().getTime();
+  // Find the difference between now and the countdown date
+  let dateDiff = countDownDate - dateNow;
+  //get time units
+  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+  // console.log(days);
+  let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  // console.log(hours);
+  let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+  // console.log(minutes);
+  let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+  // console.log(seconds);
+  document.querySelector(".events .Days").textContent =
+    days < 10 ? `0${days}` : days;
+  document.querySelector(".events .Hours").textContent =
+    hours < 10 ? `0${hours}` : hours;
+  document.querySelector(".events .Minutes").textContent =
+    minutes < 10 ? `0${minutes}` : minutes;
+  document.querySelector(".events .seconds").textContent =
+    seconds < 10 ? `0${seconds}` : seconds;
+
+  if (dateDiff == 0) {
+    clearInterval(counter);
+  }
+}, 1000);
