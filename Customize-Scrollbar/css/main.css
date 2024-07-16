@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* we can add scrollbar for any tag like div::-webkit-scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f6f6f6;
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0 53% 58% / 50%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0 53% 58% / 100%);
+}
