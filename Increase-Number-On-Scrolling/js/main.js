@@ -30,7 +30,7 @@ window.onscroll = function () {
   }
   //end increase
   //start stats increase
-  if (window.scrollY >= section.offsetTop) {
+  if (window.scrollY >= section.offsetTop - 400) {
     if (!started) {
       nums.forEach((num) => startcount(num));
     }

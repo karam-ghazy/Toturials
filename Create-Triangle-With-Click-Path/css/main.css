@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.parent {
+  width: 500px;
+  height: 500px;
+  background-color: #eee;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+}
+.tmain {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+}
+.t1 {
+  background-color: red;
+  clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+}
+
+.t2 {
+  background-color: blue;
+  clip-path: polygon(100% 100%, 50% 50%, 0% 100%);
+}
+.t3 {
+  background-color: green;
+  clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+}
+.t4 {
+  background-color: black;
+  clip-path: polygon(0% 0%, 50% 50%, 100% 0%);
+}
