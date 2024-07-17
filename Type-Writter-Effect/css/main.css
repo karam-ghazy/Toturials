@@ -1,0 +1,40 @@
+:root {
+  --main-color: rgb(255, 255, 255, 80%);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #333;
+}
+p {
+  margin: 20px auto;
+  width: 440px;
+  text-align: center;
+  font-size: 30px;
+  color: var(--main-color);
+  border-right: 2px solid var(--main-color);
+  animation: writter 4s steps(28) both;
+  -webkit-animation: writter 4s 2s steps(27) both, blink 0.5s infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@keyframes writter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 440px;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-right-color: var(--main-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
