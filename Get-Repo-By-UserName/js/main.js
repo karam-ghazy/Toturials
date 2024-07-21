@@ -1,9 +1,10 @@
 let input = document.querySelector("input");
 let getBtn = document.querySelector(".get-button");
 let divData = document.querySelector(".show-data");
-let username = input.value;
+let username;
 getBtn.onclick = function () {
   if (input.value != "") {
+    username = input.value;
     fetchlink(input.value);
     input.innerHTML = "";
   }
@@ -35,6 +36,7 @@ function createElemetAndAddToPage(repos) {
     //create a url for repo
     let url = document.createElement("a");
     url.href = `https://github.com/${username}/${repo.name}`;
+    console.log(url.href);
     //create a text for url
     url.appendChild(document.createTextNode("visit"));
     //open url in the other page
