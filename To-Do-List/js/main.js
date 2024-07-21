@@ -53,13 +53,17 @@ function ceateElementAndAddedToPage(Tasks) {
     tasksDiv.appendChild(div);
   });
 }
+//set tasks to local storage
 function setTaskToLocalStorage(Array_Taks) {
   window.localStorage.setItem("tasks", JSON.stringify(Array_Taks));
 }
+
+//remove tasks to local storage
 function removeAllTasksFromLocalStorage() {
   window.localStorage.clear();
 }
 
+//get tasks from local storage
 function getTaskFromLocalStorage() {
   let data = window.localStorage.getItem("tasks");
   if (data) {
@@ -67,6 +71,7 @@ function getTaskFromLocalStorage() {
     ceateElementAndAddedToPage(task);
   }
 }
+
 tasksDiv.onclick = function (e) {
   if (e.target.classList.contains("del")) {
     //remove tassk from local storage
@@ -84,11 +89,10 @@ tasksDiv.onclick = function (e) {
 };
 
 function removeTask(Taskid) {
-  Tasks = Tasks.filter((task) => {
-    task.id != Taskid;
-  });
+  Tasks = Tasks.filter((task) => task.id != Taskid);
   setTaskToLocalStorage(Tasks);
 }
+
 function toggleStatus(taskid) {
   for (let i = 0; i < Tasks.length; i++) {
     if (Tasks[i].id == taskid) {
@@ -99,6 +103,8 @@ function toggleStatus(taskid) {
   }
   setTaskToLocalStorage(Tasks);
 }
+
+//remove all tasks
 DeleteAllBtn.onclick = function () {
   tasksDiv.innerHTML = "";
   removeAllTasksFromLocalStorage();
