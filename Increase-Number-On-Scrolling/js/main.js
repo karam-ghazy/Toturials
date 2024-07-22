@@ -8,8 +8,6 @@ let nums = document.querySelectorAll(".stats .number"); //get numbers
 let section = document.querySelector(".stats"); // get section
 let started = false;
 
-window.onscroll = function () {};
-
 function startcount(el) {
   let goal = el.dataset.goal;
   let count = setInterval(() => {
@@ -40,7 +38,7 @@ window.onscroll = function () {
 };
 
 //get time end
-let countDownDate = new Date("Oct 10, 2024 23:59:59").getTime();
+let countDownDate = new Date("Aug 1, 2024 13:2:59").getTime();
 // console.log(countDownDate);
 
 //start counter
@@ -53,7 +51,7 @@ let counter = setInterval(() => {
   let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
   // console.log(days);
   let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  // console.log(hours);
+  console.log(hours);
   let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
   // console.log(minutes);
   let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
@@ -67,7 +65,11 @@ let counter = setInterval(() => {
   document.querySelector(".events .seconds").textContent =
     seconds < 10 ? `0${seconds}` : seconds;
 
-  if (dateDiff == 0) {
+  if (dateDiff <= 0) {
     clearInterval(counter);
+    document.querySelector(".events .Days").textContent = "00";
+    document.querySelector(".events .Hours").textContent = "00";
+    document.querySelector(".events .Minutes").textContent = "00";
+    document.querySelector(".events .seconds").textContent = "00";
   }
 }, 1000);
