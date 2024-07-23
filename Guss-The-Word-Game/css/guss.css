@@ -1,0 +1,150 @@
+:root {
+  --main-color: #ff4560;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eee;
+}
+h1 {
+  margin: 0 0 50px;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
+.game-guss {
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  .game-area {
+    .inputs {
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        span {
+          margin-right: 15px;
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+      .disabled-input {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      input {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-bottom: 1px solid #333;
+        margin: 0 5px;
+        font-size: 50px;
+        font-weight: bold;
+        caret-color: var(--main-color);
+        background-color: white;
+        text-align: center;
+        &:focus {
+          outline-color: #ccc;
+        }
+        &.yes-in-place {
+          background-color: #f89e13;
+          border: #f89e13;
+          color: white;
+        }
+        &.not-in-place {
+          background-color: #18ba89;
+          border: #18ba89;
+          color: white;
+        }
+        &.no {
+          background-color: #27303f;
+          border: #27303f;
+          color: white;
+        }
+      }
+    }
+    .control {
+      width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 30px auto;
+      button {
+        font-size: 25px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        padding: 15px 20px;
+        font-weight: bold;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+      }
+      .check {
+        background-color: var(--main-color);
+        flex: 1;
+      }
+      .hint {
+        background-color: #009688;
+        width: fit-content;
+      }
+      button:disabled {
+        opacity: 0.4;
+        background-color: black;
+        cursor: no-drop;
+      }
+    }
+  }
+  .key-colors {
+    .key-color {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 10px;
+      background-color: white;
+      .key {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+        &.in-place {
+          background-color: #f89e13;
+        }
+        &.not-in-place {
+          background-color: #18ba89;
+        }
+        &.no {
+          background-color: #27303f;
+        }
+      }
+      .key-text {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
