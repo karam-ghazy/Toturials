@@ -37,12 +37,15 @@ body {
       height: 324px;
       padding: 20px;
       flex: 1;
+      left: -60px;
       .the-draw {
         width: 60px;
         height: 280px;
         position: relative;
         margin: auto;
         border-bottom: var(--main-width) solid var(--main-color);
+        display: none;
+
         .the-stand {
           position: absolute;
           height: 100%;
@@ -51,8 +54,11 @@ body {
           left: 50%;
           top: 0px;
           transform: translateX(-50%);
+          display: none;
         }
         .the-hang {
+          display: none;
+
           &::before {
             content: "";
             position: absolute;
@@ -82,6 +88,7 @@ body {
           border-radius: 50%;
           left: 95px;
           top: 40px;
+          display: none;
         }
         .the-man {
           .head {
@@ -92,6 +99,7 @@ body {
             border-radius: 50px;
             left: 105px;
             top: 50px;
+            display: none;
           }
           .body {
             position: absolute;
@@ -100,8 +108,10 @@ body {
             background-color: var(--main-color);
             left: 130px;
             top: 100px;
+            display: none;
           }
           .hands {
+            display: none;
             &::before,
             &::after {
               content: "";
@@ -127,6 +137,7 @@ body {
             }
           }
           .legs {
+            display: none;
             &::before,
             &::after {
               content: "";
@@ -153,6 +164,54 @@ body {
           }
         }
       }
+      &.wrong-1 {
+        .the-draw {
+          display: block;
+        }
+      }
+      &.wrong-2 {
+        .the-stand {
+          display: block;
+        }
+      }
+      &.wrong-3 {
+        .the-hang {
+          display: block;
+        }
+      }
+      &.wrong-4 {
+        .the-rope {
+          display: block;
+        }
+      }
+      &.wrong-5 {
+        .the-man {
+          .head {
+            display: block;
+          }
+        }
+      }
+      &.wrong-6 {
+        .the-man {
+          .body {
+            display: block;
+          }
+        }
+      }
+      &.wrong-7 {
+        .the-man {
+          .hands {
+            display: block;
+          }
+        }
+      }
+      &.wrong-8 {
+        .the-man {
+          .legs {
+            display: block;
+          }
+        }
+      }
     }
     .letters {
       flex: 1;
@@ -171,7 +230,66 @@ body {
         cursor: pointer;
         font-weight: bold;
         color: #fff;
+        &.clicked {
+          background-color: var(--main-color);
+          opacity: 0.2;
+          cursor: no-drop;
+        }
       }
+    }
+  }
+  .letters-guess {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    min-height: 104px;
+    display: flex;
+    justify-content: center;
+    span {
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-color: #fdfdfd;
+      border-bottom: 3px solid var(--main-color);
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 60px;
+      transition: 0.3s;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      &.has-space {
+        border: none;
+        background-color: transparent;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 4px;
+          background-color: var(--main-color);
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  .message {
+    text-align: center;
+    width: fit-content;
+    margin: 30px auto 0;
+    p {
+      font-size: 30px;
+      font-weight: bold;
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: var(--main-width);
     }
   }
 }
