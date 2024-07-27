@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.control-button {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(3 169 244 / 90%);
+  span {
+    color: white;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+}
+
+.info-container {
+  width: 1080px;
+  margin: 20px auto;
+  background-color: #f6f6f6;
+  border: 2px solid #2196f3;
+  padding: 20px;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .name span {
+    color: #333;
+  }
+  .tries span {
+    color: #ff0000;
+  }
+}
+
+.memory-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1100px;
+  margin: 20px auto;
+  .game-block {
+    height: 200px;
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+    &.flipped {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+    }
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      backface-visibility: hidden;
+      border: 5px solid #2196f3;
+    }
+    .front {
+      background-color: #333;
+      line-height: 200px;
+      &::before {
+        content: "?";
+        color: #fff;
+        font-size: 140px;
+        font-weight: bold;
+      }
+    }
+    .back {
+      background-color: #607d88;
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      img {
+        width: 140px;
+        height: 140px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
