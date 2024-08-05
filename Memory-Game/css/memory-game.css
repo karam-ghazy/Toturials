@@ -56,6 +56,9 @@ body {
   flex-wrap: wrap;
   width: 1100px;
   margin: 20px auto;
+  &.no-clicking {
+    pointer-events: none;
+  }
   .game-block {
     height: 200px;
     transition: transform 0.5s;
@@ -68,7 +71,8 @@ body {
     position: relative;
     flex: 1 0 200px;
     margin: 0 10px 20px;
-    &.flipped {
+    &.flipped,
+    &.has-matched {
       transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
       -moz-transform: rotateY(180deg);
